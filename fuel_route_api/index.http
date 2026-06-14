@@ -1,0 +1,25 @@
+
+@api_key = eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6ImEzYjI5NWQwMThlNjRjZTM4MGVjNmYwOWIyNDU2Y2U4IiwiaCI6Im11cm11cjY0In0=
+
+
+###
+POST http://127.0.0.1:8000/api/route/
+Content-Type: application/json
+
+{
+    "start": "Austin, TX",
+    "end": "Detroit, MI"
+}
+
+###
+POST https://api.heigit.org/openrouteservice/v2/directions/driving-car/geojson
+Content-Type: application/json
+Authorization: {{api_key}}
+
+{
+    "coordinates": [[-74.0060, 40.7128], [-87.6298, 41.8781]]
+}
+
+
+###
+GET http://localhost:8000/api/route/view-map/?start=Austin, TX&end=Detroit, MI
